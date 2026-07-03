@@ -31,3 +31,16 @@ CREATE TABLE sale_items (
     quantity INT NOT NULL,
     price DECIMAL(10,2) NOT NULL
 );
+-- SALES RELATIONSHIPS
+ALTER TABLE sales
+ADD CONSTRAINT fk_sales_customer
+FOREIGN KEY (customer_id) REFERENCES customers(id);
+
+-- SALE ITEMS RELATIONSHIPS
+ALTER TABLE sale_items
+ADD CONSTRAINT fk_saleitems_sale
+FOREIGN KEY (sale_id) REFERENCES sales(id);
+
+ALTER TABLE sale_items
+ADD CONSTRAINT fk_saleitems_product
+FOREIGN KEY (product_id) REFERENCES products(id);
