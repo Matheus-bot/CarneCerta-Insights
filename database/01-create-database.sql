@@ -24,3 +24,10 @@ CREATE TABLE sales (
     total DECIMAL(10,2),
     created_at DATETIME DEFAULT GETDATE()
 );
+CREATE TABLE sale_items (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    sale_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10,2) NOT NULL
+);
