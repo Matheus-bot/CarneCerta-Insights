@@ -17,3 +17,10 @@ CREATE TABLE products (
     price DECIMAL(10,2),
     active BIT DEFAULT 1
 );
+CREATE TABLE sales (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    customer_id INT NOT NULL,
+    employee_name VARCHAR(100),
+    total DECIMAL(10,2),
+    created_at DATETIME DEFAULT GETDATE()
+);
