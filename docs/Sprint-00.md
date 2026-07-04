@@ -1,45 +1,86 @@
-# Sprint 0 — Estrutura do Projeto
+# Sprint 0 — Project Setup (CarneCerta Insights)
 
-## 🎯 Objetivo
-Organizar toda a base inicial do projeto CarneCerta Insights.
-
----
-
-## 📋 Tarefas da Sprint
-
-### 🧱 Estrutura
-- Criar repositório GitHub
-- Criar estrutura de pastas
-- Criar Project Charter
-- Organizar Trello
+## 🎯 Objetivo da Sprint
+Estruturar toda a base do projeto de análise de dados CarneCerta Insights, definindo arquitetura inicial, banco de dados, padrões e primeiros pipelines de dados.
 
 ---
 
-### 📄 Documentação
-- Definir padrão de documentação (docs/)
-- Definir padrão de commits
-- Criar README base (vazio por enquanto)
+## 🧱 O que foi implementado
+
+### Estrutura do Projeto
+- Repositório GitHub criado
+- Estrutura de pastas definida:
+  - database/
+  - sql/
+  - etl/
+  - dw/
+  - docs/
+  - datasets/
+  - excel/
 
 ---
 
-### ⚙️ Setup do projeto
-- Definir stack (SQL Server, Python, Power BI)
-- Definir padrão de nomes
-- Definir fluxo de trabalho (Trello → VS Code → Git)
+### Banco de Dados
+- Criação do banco CarneCertaInsights
+- Modelagem inicial:
+  - customers
+  - products
+  - sales
+  - sale_items
+- Definição de chaves primárias e estrangeiras
 
 ---
 
-### 🧠 Planejamento
-- Definir entidades iniciais (sem modelagem ainda)
-- Definir perguntas de negócio
-- Definir KPIs iniciais
+### ETL
+- Criação da tabela analítica:
+  - fact_sales_analytics
+- Pipeline simples de transformação e carga de dados
 
 ---
 
-## 📊 Status
-Em andamento
+### Data Warehouse (V1)
+- Dimensões criadas:
+  - dim_customers
+  - dim_products
+  - dim_date
+- Modelo estrela (Star Schema) implementado
+- View final:
+  - vw_sales_full_analysis
 
 ---
 
-## 📝 Observações
-Sprint focada apenas em estrutura e organização do projeto.
+### SQL Analytics (BI Layer)
+KPIs desenvolvidos:
+- Receita total
+- Ticket médio
+- Produtos mais vendidos
+- Clientes mais valiosos
+- Vendas por funcionário
+- Produtos com baixa saída
+- Faturamento por dia
+
+---
+
+## ⚙️ Padrões definidos
+- Uso de SQL Server como banco principal
+- Estrutura de projeto separada por camadas (database / etl / dw / sql)
+- Versionamento via GitHub
+- Queries organizadas por módulo de análise
+
+---
+
+## 🧠 Decisões importantes
+- Uso de tabela fact para análise (fact_sales_analytics)
+- Separação entre dados operacionais e analíticos
+- Criação de Data Warehouse simplificado para BI
+- Foco em portfólio de Analista de Dados
+
+---
+
+## 📊 Resultado da Sprint 0
+A Sprint 0 estabeleceu toda a base técnica e estrutural do projeto, permitindo a evolução para análise de dados, BI e dashboards.
+
+---
+
+## 🚀 Próxima etapa
+Sprint 1 — Power BI e visualização de dados
