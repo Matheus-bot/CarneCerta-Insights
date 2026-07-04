@@ -12,10 +12,25 @@ CREATE TABLE customers (
 );
 CREATE TABLE products (
     id INT IDENTITY(1,1) PRIMARY KEY,
+
+    -- Basic Information
     name VARCHAR(100) NOT NULL,
-    category VARCHAR(50),
-    price DECIMAL(10,2),
-    active BIT DEFAULT 1
+    category VARCHAR(50) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    active BIT DEFAULT 1,
+
+    -- Product Characteristics
+    fat_level VARCHAR(20) NOT NULL,
+    tenderness_level TINYINT NOT NULL,
+    flavor_intensity TINYINT NOT NULL,
+
+    -- Preparation
+    cooking_method VARCHAR(50) NOT NULL,
+
+    -- Business
+    cost_benefit VARCHAR(20) NOT NULL,
+    price_range VARCHAR(20) NOT NULL,
+    is_premium BIT DEFAULT 0
 );
 CREATE TABLE sales (
     id INT IDENTITY(1,1) PRIMARY KEY,
