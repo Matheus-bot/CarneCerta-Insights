@@ -1,4 +1,3 @@
-
 -- Quanto o negócio faturou no total?
 SELECT 
     SUM(total) AS total_revenue
