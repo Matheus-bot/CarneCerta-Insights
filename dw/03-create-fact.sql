@@ -14,6 +14,9 @@ CREATE TABLE fact_sales_analytics
 (
     sale_id INT NOT NULL,
 
+    customer_id INT NOT NULL,
+    product_id INT NOT NULL,
+
     customer_name VARCHAR(100),
     product_name VARCHAR(100),
     category VARCHAR(50),
@@ -35,6 +38,8 @@ GO
 INSERT INTO fact_sales_analytics
 (
     sale_id,
+    customer_id,
+    product_id,
     customer_name,
     product_name,
     category,
@@ -46,6 +51,8 @@ INSERT INTO fact_sales_analytics
 SELECT
 
     s.id,
+    c.id,
+    p.id,
     c.name,
     p.name,
     p.category,

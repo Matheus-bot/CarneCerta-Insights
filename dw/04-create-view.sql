@@ -50,10 +50,10 @@ SELECT
 FROM fact_sales_analytics f
 
 INNER JOIN dim_customers c
-    ON f.customer_name = c.customer_name
+    ON f.customer_id = c.customer_id
 
 INNER JOIN dim_products p
-    ON f.product_name = p.product_name
+    ON f.product_id = p.product_id
 
 INNER JOIN dim_date d
     ON CAST(f.sale_date AS DATE) = d.date_id;

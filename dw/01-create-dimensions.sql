@@ -23,8 +23,11 @@ GO
 CREATE TABLE dim_customers
 (
     customer_key INT IDENTITY(1,1) PRIMARY KEY,
+    customer_id INT NOT NULL,
     customer_name VARCHAR(100) NOT NULL,
-    email VARCHAR(100)
+    email VARCHAR(100),
+
+    CONSTRAINT UQ_dim_customers_customer_id UNIQUE (customer_id)
 );
 
 GO
@@ -36,6 +39,7 @@ GO
 CREATE TABLE dim_products
 (
     product_key INT IDENTITY(1,1) PRIMARY KEY,
+    product_id INT NOT NULL,
 
     product_name VARCHAR(100) NOT NULL,
     category VARCHAR(50),
@@ -49,7 +53,9 @@ CREATE TABLE dim_products
     cost_benefit VARCHAR(30),
     price_range VARCHAR(30),
 
-    is_premium BIT
+    is_premium BIT,
+
+    CONSTRAINT UQ_dim_products_product_id UNIQUE (product_id)
 );
 
 GO

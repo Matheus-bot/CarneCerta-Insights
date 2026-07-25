@@ -17,10 +17,12 @@ GO
 
 INSERT INTO dim_customers
 (
+    customer_id,
     customer_name,
     email
 )
 SELECT
+    id,
     name,
     email
 FROM customers;
@@ -33,6 +35,7 @@ GO
 
 INSERT INTO dim_products
 (
+    product_id,
     product_name,
     category,
     fat_level,
@@ -44,6 +47,7 @@ INSERT INTO dim_products
     is_premium
 )
 SELECT
+    id,
     name,
     category,
     fat_level,

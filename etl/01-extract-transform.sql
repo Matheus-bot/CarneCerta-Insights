@@ -10,6 +10,8 @@ IF OBJECT_ID('fact_sales_analytics', 'U') IS NOT NULL
 -- Criação da tabela analítica
 CREATE TABLE fact_sales_analytics (
     sale_id INT,
+    customer_id INT,
+    product_id INT,
     customer_name VARCHAR(100),
     product_name VARCHAR(100),
     category VARCHAR(50),
@@ -27,6 +29,8 @@ CREATE TABLE fact_sales_analytics (
 INSERT INTO fact_sales_analytics
 (
     sale_id,
+    customer_id,
+    product_id,
     customer_name,
     product_name,
     category,
@@ -35,8 +39,10 @@ INSERT INTO fact_sales_analytics
     total_value,
     sale_date
 )
-SELECT 
+SELECT
     s.id AS sale_id,
+    c.id AS customer_id,
+    p.id AS product_id,
     c.name AS customer_name,
     p.name AS product_name,
     p.category,
